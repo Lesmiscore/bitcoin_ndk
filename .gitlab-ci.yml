@@ -16,7 +16,7 @@ services:
     BITS: 64
   artifacts:
     paths:
-      - *-*.tar.gz
+      - "*-*.tar.gz"
 
 
 base:
