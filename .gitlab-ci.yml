@@ -78,12 +78,14 @@ knots-x86:
 monacoin:
   extends: .base
   variables:
+    COMMIT: 68f034bf830b87eddd6abf7b204642072aa5db0a
     REPO: https://github.com/monacoinproject/monacoin.git
     BINARY_NAME: monacoin
 
 monacoin-armeabi:
   extends: .base
   variables:
+    COMMIT: 68f034bf830b87eddd6abf7b204642072aa5db0a
     TOOLCHAIN: arm-linux-androideabi-clang
     TARGETHOST: arm-linux-androideabi
     BITS: 32
@@ -93,6 +95,7 @@ monacoin-armeabi:
 monacoin-x86_64:
   extends: .base
   variables:
+    COMMIT: 68f034bf830b87eddd6abf7b204642072aa5db0a
     TOOLCHAIN: x86_64-clang
     TARGETHOST: x86_64-linux-android
     REPO: https://github.com/monacoinproject/monacoin.git
@@ -101,6 +104,7 @@ monacoin-x86_64:
 monacoin-x86:
   extends: .base
   variables:
+    COMMIT: 68f034bf830b87eddd6abf7b204642072aa5db0a
     TOOLCHAIN: x86-clang
     TARGETHOST: i686-linux-android
     BITS: 32
