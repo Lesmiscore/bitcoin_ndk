@@ -35,6 +35,7 @@ x86_64:
     TARGETHOST: x86_64-linux-android
 
 x86:
+  extends: .base
   variables:
     TOOLCHAIN: x86-clang
     TARGETHOST: i686-linux-android
@@ -60,7 +61,8 @@ knots-x86_64:
     TARGETHOST: x86_64-linux-android
     REPO: https://github.com/bitcoinknots/bitcoin.git
 
-x86:
+knots-x86:
+  extends: .base
   variables:
     TOOLCHAIN: x86-clang
     TARGETHOST: i686-linux-android
