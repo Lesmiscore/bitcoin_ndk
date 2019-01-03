@@ -14,6 +14,9 @@ services:
     TOOLCHAIN: aarch64-linux-android-clang
     TARGETHOST: aarch64-linux-android
     BITS: 64
+  artifacts:
+    paths:
+      - *-*.tar.gz
 
 
 base:
