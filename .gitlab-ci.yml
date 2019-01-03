@@ -44,6 +44,7 @@ x86:
     TARGETHOST: i686-linux-android
     BITS: 32
 
+
 knots:
   extends: .base
   variables:
@@ -71,4 +72,33 @@ knots-x86:
     TARGETHOST: i686-linux-android
     BITS: 32
     REPO: https://github.com/bitcoinknots/bitcoin.git
+
+
+monacoin:
+  extends: .base
+  variables:
+    REPO: https://github.com/monacoinproject/monacoin.git
+
+monacoin-armeabi:
+  extends: .base
+  variables:
+    TOOLCHAIN: arm-linux-androideabi-clang
+    TARGETHOST: arm-linux-androideabi
+    BITS: 32
+    REPO: https://github.com/monacoinproject/monacoin.git
+
+monacoin-x86_64:
+  extends: .base
+  variables:
+    TOOLCHAIN: x86_64-clang
+    TARGETHOST: x86_64-linux-android
+    REPO: https://github.com/monacoinproject/monacoin.git
+
+monacoin-x86:
+  extends: .base
+  variables:
+    TOOLCHAIN: x86-clang
+    TARGETHOST: i686-linux-android
+    BITS: 32
+    REPO: https://github.com/monacoinproject/monacoin.git
 
