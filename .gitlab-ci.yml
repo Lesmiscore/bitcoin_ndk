@@ -1,0 +1,69 @@
+image: docker
+
+services:
+  - docker:dind
+
+.base:
+  script:
+    - docker run -v $PWD:/repo $DOCKERBUILDER@sha256:$DOCKERHASH /bin/bash -c "/repo/fetchbuild.sh $REPO $COMMIT $TOOLCHAIN $TARGETHOST $BITS"
+  variables:
+    DOCKERBUILDER: greenaddress/core_builder_for_android
+    DOCKERHASH: 8be296601b9f2dbb2b0572c96ad8815f16ce52b814b1724023e762be2ab7ef89
+    REPO: https://github.com/bitcoin/bitcoin.git
+    COMMIT: ef70f9b52b851c7997a9f1a0834714e3eebc1fd8
+    TOOLCHAIN: aarch64-linux-android-clang
+    TARGETHOST: aarch64-linux-android
+    BITS: 64
+
+
+base:
+  extends: .base
+  variables:
+    UNUSED: "true"
+
+armeabi:
+  extends: .base
+  variables:
+    TOOLCHAIN: arm-linux-androideabi-clang
+    TARGETHOST: arm-linux-androideabi
+    BITS: 32
+
+x86_64:
+  extends: .base
+  variables:
+    TOOLCHAIN: x86_64-clang
+    TARGETHOST: x86_64-linux-android
+
+x86:
+  variables:
+    TOOLCHAIN: x86-clang
+    TARGETHOST: i686-linux-android
+    BITS: 32
+
+knots:
+  extends: .base
+  variables:
+    REPO: https://github.com/bitcoinknots/bitcoin.git
+
+knots-armeabi:
+  extends: .base
+  variables:
+    TOOLCHAIN: arm-linux-androideabi-clang
+    TARGETHOST: arm-linux-androideabi
+    BITS: 32
+    REPO: https://github.com/bitcoinknots/bitcoin.git
+
+knots-x86_64:
+  extends: .base
+  variables:
+    TOOLCHAIN: x86_64-clang
+    TARGETHOST: x86_64-linux-android
+    REPO: https://github.com/bitcoinknots/bitcoin.git
+
+x86:
+  variables:
+    TOOLCHAIN: x86-clang
+    TARGETHOST: i686-linux-android
+    BITS: 32
+    REPO: https://github.com/bitcoinknots/bitcoin.git
+
