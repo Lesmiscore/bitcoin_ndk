@@ -13,7 +13,7 @@ git clone $repo bitcoin
 cd bitcoin
 git checkout $commit
 
-ls -1 /repo/patchset/$patchset | sort | while read line ; do
+find /repo/patchset/$patchset | sort | while read line ; do
     patch -p1 < $line
 done
 
