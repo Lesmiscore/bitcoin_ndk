@@ -5,7 +5,7 @@ services:
 
 .base:
   script:
-    - docker run -v $PWD:/repo $DOCKERBUILDER@sha256:$DOCKERHASH /bin/bash -c "/repo/fetchbuild.sh $REPO $COMMIT $TOOLCHAIN $TARGETHOST $BITS $BINARY_NAME"
+    - docker run -v $PWD:/repo $DOCKERBUILDER@sha256:$DOCKERHASH /bin/bash -c "/repo/fetchbuild.sh $REPO $COMMIT $TOOLCHAIN $TARGETHOST $BITS $BINARY_NAME $PATCHSET"
   variables:
     DOCKERBUILDER: greenaddress/core_builder_for_android
     DOCKERHASH: 8be296601b9f2dbb2b0572c96ad8815f16ce52b814b1724023e762be2ab7ef89
@@ -15,6 +15,7 @@ services:
     TARGETHOST: aarch64-linux-android
     BITS: 64
     BINARY_NAME: bitcoin
+    PATCHSET: "0.17"
   artifacts:
     paths:
       - "*-*.tar.gz"
@@ -81,6 +82,7 @@ monacoin:
     COMMIT: 68f034bf830b87eddd6abf7b204642072aa5db0a
     REPO: https://github.com/monacoinproject/monacoin.git
     BINARY_NAME: monacoin
+    PATCHSET: "0.16"
 
 monacoin-armeabi:
   extends: .base
@@ -91,6 +93,7 @@ monacoin-armeabi:
     BITS: 32
     REPO: https://github.com/monacoinproject/monacoin.git
     BINARY_NAME: monacoin
+    PATCHSET: "0.16"
 
 monacoin-x86_64:
   extends: .base
@@ -100,6 +103,7 @@ monacoin-x86_64:
     TARGETHOST: x86_64-linux-android
     REPO: https://github.com/monacoinproject/monacoin.git
     BINARY_NAME: monacoin
+    PATCHSET: "0.16"
 
 monacoin-x86:
   extends: .base
@@ -110,4 +114,5 @@ monacoin-x86:
     BITS: 32
     REPO: https://github.com/monacoinproject/monacoin.git
     BINARY_NAME: monacoin
+    PATCHSET: "0.16"
 

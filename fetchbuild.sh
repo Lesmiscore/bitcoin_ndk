@@ -7,12 +7,15 @@ toolchain=$3
 target_host=$4
 bits=$5
 binname=$6
+patchset=$7
 
 git clone $repo bitcoin
 cd bitcoin
 git checkout $commit
 
-patch -p1 < /repo/0001-android-patches.patch
+ls -1 /repo/patchset/$patchset | sort | while read line ; do
+    patch -p1 < $line
+done
 
 
 export PATH=/opt/$toolchain/bin:${PATH}
