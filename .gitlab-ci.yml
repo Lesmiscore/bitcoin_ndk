@@ -21,25 +21,25 @@ services:
       - "*-*.tar.gz"
 
 
-aarch64:
+core-aarch64:
   extends: .base
   variables:
     UNUSED: "true"
 
-armeabi:
+core-armeabi:
   extends: .base
   variables:
     TOOLCHAIN: arm-linux-androideabi-clang
     TARGETHOST: arm-linux-androideabi
     BITS: 32
 
-x86_64:
+core-x86_64:
   extends: .base
   variables:
     TOOLCHAIN: x86_64-clang
     TARGETHOST: x86_64-linux-android
 
-x86:
+core-x86:
   extends: .base
   variables:
     TOOLCHAIN: x86-clang
