@@ -19,6 +19,7 @@ services:
   artifacts:
     paths:
       - "*-*.tar.gz"
+  retry: 2
 
 
 core-aarch64:
