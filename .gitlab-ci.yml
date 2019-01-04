@@ -21,7 +21,7 @@ services:
       - "*-*.tar.gz"
 
 
-base:
+aarch64:
   extends: .base
   variables:
     UNUSED: "true"
@@ -47,7 +47,7 @@ x86:
     BITS: 32
 
 
-knots:
+knots-aarch64:
   extends: .base
   variables:
     REPO: https://github.com/bitcoinknots/bitcoin.git
@@ -114,5 +114,46 @@ monacoin-x86:
     BITS: 32
     REPO: https://github.com/monacoinproject/monacoin.git
     BINARY_NAME: monacoin
+    PATCHSET: "0.16"
+
+
+bitzeny-aarch64:
+  extends: .base
+  variables:
+    COMMIT: efd7833970a55e65a3b318ab99483335332ac411
+    REPO: https://github.com/bitzenyPlus/BitZenyPlus.git
+    BINARY_NAME: bitzeny
+    PATCHSET: "0.16"
+
+bitzeny-armeabi:
+  extends: .base
+  variables:
+    COMMIT: efd7833970a55e65a3b318ab99483335332ac411
+    TOOLCHAIN: arm-linux-androideabi-clang
+    TARGETHOST: arm-linux-androideabi
+    BITS: 32
+    REPO: https://github.com/bitzenyPlus/BitZenyPlus.git
+    BINARY_NAME: bitzeny
+    PATCHSET: "0.16"
+
+bitzeny-x86_64:
+  extends: .base
+  variables:
+    COMMIT: efd7833970a55e65a3b318ab99483335332ac411
+    TOOLCHAIN: x86_64-clang
+    TARGETHOST: x86_64-linux-android
+    REPO: https://github.com/bitzenyPlus/BitZenyPlus.git
+    BINARY_NAME: bitzeny
+    PATCHSET: "0.16"
+
+bitzeny-x86:
+  extends: .base
+  variables:
+    COMMIT: efd7833970a55e65a3b318ab99483335332ac411
+    TOOLCHAIN: x86-clang
+    TARGETHOST: i686-linux-android
+    BITS: 32
+    REPO: https://github.com/bitzenyPlus/BitZenyPlus.git
+    BINARY_NAME: bitzeny
     PATCHSET: "0.16"
 
