@@ -123,7 +123,7 @@ bitzeny-aarch64:
     COMMIT: efd7833970a55e65a3b318ab99483335332ac411
     REPO: https://github.com/bitzenyPlus/BitZenyPlus.git
     BINARY_NAME: bitzeny
-    PATCHSET: "0.16"
+    PATCHSET: "0.15"
 
 bitzeny-armeabi:
   extends: .base
@@ -134,7 +134,7 @@ bitzeny-armeabi:
     BITS: 32
     REPO: https://github.com/bitzenyPlus/BitZenyPlus.git
     BINARY_NAME: bitzeny
-    PATCHSET: "0.16"
+    PATCHSET: "0.15"
 
 bitzeny-x86_64:
   extends: .base
@@ -144,7 +144,7 @@ bitzeny-x86_64:
     TARGETHOST: x86_64-linux-android
     REPO: https://github.com/bitzenyPlus/BitZenyPlus.git
     BINARY_NAME: bitzeny
-    PATCHSET: "0.16"
+    PATCHSET: "0.15"
 
 bitzeny-x86:
   extends: .base
@@ -155,5 +155,5 @@ bitzeny-x86:
     BITS: 32
     REPO: https://github.com/bitzenyPlus/BitZenyPlus.git
     BINARY_NAME: bitzeny
-    PATCHSET: "0.16"
+    PATCHSET: "0.15"
 
