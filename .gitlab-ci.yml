@@ -77,7 +77,7 @@ knots-x86:
     REPO: https://github.com/bitcoinknots/bitcoin.git
 
 
-monacoin:
+monacoin-aarch64:
   extends: .base
   variables:
     COMMIT: 68f034bf830b87eddd6abf7b204642072aa5db0a
